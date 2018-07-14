@@ -132,9 +132,9 @@ softmax分类损失前向传播函数
 - [x] 梯度下降
 
 # 4. 参考资料
-CS231N课程笔记翻译: https://zhuanlan.zhihu.com/p/21930884
+**CS231N课程笔记翻译:** https://zhuanlan.zhihu.com/p/21930884
 
-较相关的内容：
+**较相关的内容：**
 
 线性分类笔记（下）
 
@@ -144,17 +144,17 @@ CS231N课程笔记翻译: https://zhuanlan.zhihu.com/p/21930884
 
 神经网络笔记3（下）
 
-CS231N公开课：http://study.163.com/course/introduction/1003223001.htm
+**CS231N公开课**：http://study.163.com/course/introduction/1003223001.htm
 
-较相关的内容：
+**较相关的内容：**
 
 线性分类器损失函数与最优化
 
 反向传播与神经网络初步
 
-Coursea机器学习：https://zh.coursera.org/learn/machine-learning
+**Coursea机器学习**：https://zh.coursera.org/learn/machine-learning
 
-较相关的内容：
+**较相关的内容：**
 
 第四周
 
