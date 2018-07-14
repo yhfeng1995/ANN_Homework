@@ -30,7 +30,7 @@ softmax_loss = softmax_forward(y, train_label);  % softmax损失
 loss = softmax_loss;  % 总损失
 
 % 损失函数后向传播
-ds = softmax_backward(y, train_label);
+dy = softmax_backward(y, train_label);
 
 % 程序实现2：人工神经网络的的后向传播===============================
 
