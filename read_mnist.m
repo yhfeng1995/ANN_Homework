@@ -8,9 +8,8 @@ function [test_x, test_y, train_x, train_y] = read_mnist()
 
 load mnist_uint8.mat  % train_x, train_y, test_x, test_y载入到工作区
 
-% 程序实现：数据集每个特征维度（纵向）均值归一化（均值=0；标准差=1）===========
-
-
-
-% 程序结束==================================================================
+mu=mean(train_x);    
+sigma=max(std(train_x),eps);
+train_x=bsxfun(@minus,train_x,mu);  %每个样本分别减去平均值
+train_x=bsxfun(@rdivide,train_x,sigma);  %分别除以标准差
 end
