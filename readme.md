@@ -44,20 +44,20 @@ mnist_uint8.mat包含了MNIST数据集的全部数据，其中：
 
 每一层所有神经元的加权求和的过程可以通过权重矩阵*W*与节点向量*x*相乘并加上偏置*b*表示。有一层隐藏层的人工神经网络可以由下面的数学形式表示：
 
-$$h_1 = x*W_1 + b_1\\a_1 = g(h_1)\\y = a_1*W_2 + b_2$$
+![img](http://latex.codecogs.com/gif.latex?%5C%5C%20h_1%20%3D%20x*W_1%20&plus;%20b_1%5C%5C%20a_1%20%3D%20g%28h_1%29%5C%5C%20y%20%3D%20a_1*W_2%20&plus;%20b_2)
 
-其中$g( )$表示非线性激活函数，这种不断由前一层输入得到后一层输出的计算方式称为前向传播。
+其中g( )表示非线性激活函数，这种不断由前一层输入得到后一层输出的计算方式称为前向传播。
 
 ## 2.3 损失函数
 损失函数用来计算输出结果和真实值标签之间的差距，并用来指导权重和偏置的更新。对于多分类问题，一种常用的损失函数为softmax函数和交叉熵计算。
 
 softmax函数将网络的输出结果看作未归一化的对数概率，进行指数归一化。在一个数组V中，Vi表示V中的第i个元素，那么这个元素的Softmax值就是：
 
-$$S_i = \frac{e^{V_i}}{\sum_j{e^{V_j}}}$$
+![img](http://latex.codecogs.com/gif.latex?S_i%20%3D%20%5Cfrac%7Be%5E%7BV_i%7D%7D%7B%5Csum_j%7Be%5E%7BV_j%7D%7D%7D)
 
 由softmax值可以计算交叉熵作为损失，对于输入网络的N个样本，第i个样本的交叉熵定义为：
 
-$$Li = -log(\frac{e^{f_{y_i}}}{\sum_j{e^{f_j}}})$$
+![img](http://latex.codecogs.com/gif.latex?Li%20%3D%20-log%28%5Cfrac%7Be%5E%7Bf_%7By_i%7D%7D%7D%7B%5Csum_j%7Be%5E%7Bf_j%7D%7D%7D%29)
 
 其中，log中就是第i个样本中真实分类对应的softmax值。
 
@@ -71,11 +71,11 @@ $$Li = -log(\frac{e^{f_{y_i}}}{\sum_j{e^{f_j}}})$$
 ## 2.5 梯度下降
 梯度给出了网络优化的方向，向负梯度方向不断更新参数可以使网络的输出向极小值靠近。限制于内存，我们不会每个将整个训练集输入网络进行训练，而是每次随机从训练集中选择部分样本组成小批量进行训练。对于每一个参数，梯度下降的表达式为：
 
-$$\theta_{t+1} = \theta_t - \alpha\nabla_{\theta}L(\theta;x_{i:i+m};y_{i:i+m})$$
+![img](http://latex.codecogs.com/gif.latex?%5Ctheta_%7Bt&plus;1%7D%20%3D%20%5Ctheta_t%20-%20%5Calpha%5Cnabla_%7B%5Ctheta%7DL%28%5Ctheta%3Bx_%7Bi%3Ai&plus;m%7D%3By_%7Bi%3Ai&plus;m%7D%29)
 
-$\theta$是待更新的参数，$\alpha$是学习率，$\nabla_{\theta}L(\theta;x_{i:i+m};y_{i:i+m})$是m个样本批量单步训练计算得到的损失函数L对参数的梯度，由后向传播计算的偏导得到。
+![img](http://latex.codecogs.com/gif.latex?%5Ctheta)待更新的参数，![img](http://latex.codecogs.com/gif.latex?%5Calpha)是学习率，![img](http://latex.codecogs.com/gif.latex?%5Cnabla_%7B%5Ctheta%7DL%28%5Ctheta%3Bx_%7Bi%3Ai&plus;m%7D%3By_%7Bi%3Ai&plus;m%7D%29)是m个样本批量单步训练计算得到的损失函数L对参数的梯度，由后向传播计算的偏导得到。
 
-\alpha学习率的大小在训练时起到了关键的作用。如果学习率太小，参数的梯度下降很小，训练很慢，损失函数的错误率会一直维持很高的水平。如果学习率太大，梯度下降会跳过极小值，同样会导致训练缓慢，甚至训练发散。一般需要实验确定学习率的大小。
+![img](http://latex.codecogs.com/gif.latex?%5Calpha)学习率的大小在训练时起到了关键的作用。如果学习率太小，参数的梯度下降很小，训练很慢，损失函数的错误率会一直维持很高的水平。如果学习率太大，梯度下降会跳过极小值，同样会导致训练缓慢，甚至训练发散。一般需要实验确定学习率的大小。
 
 # 3. 手写体识别程序
 
