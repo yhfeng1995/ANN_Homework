@@ -88,19 +88,19 @@ softmax函数将网络的输出结果看作未归一化的对数概率，进行�
 
 ## 3.2 softmax_backward.m
 
-softmax损失函数后向传播函数
+softmax分类损失后向传播函数
 
 **程序实现**
 
-- [x] softmax损失函数后向传播
+- [x] softmax分类损失后向传播
 
 ## 3.3 softmax_forward.m
 
-softmax损失函数前向传播函数
+softmax分类损失前向传播函数
 
 **程序实现**：
 
-- [x] softmax损失函数前向传播
+- [x] softmax分类损失前向传播
 
 ## 3.4 test.m
 
