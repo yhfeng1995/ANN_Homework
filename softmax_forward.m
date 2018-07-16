@@ -4,7 +4,7 @@ function loss = softmax_forward(score, label)
 % :param score: 神经网络输出单元
 % :param label: 训练样本真实标签
 %
-% :return loss: softmax损失函数 
+% :return loss: softmax损失
 
 % 代码实现：softmax损失函数前向传播==========================================
 
